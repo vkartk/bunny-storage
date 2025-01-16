@@ -17,6 +17,10 @@ jobs:
           node-version: 20
       - run: npm ci
       - run: npm test
+        env:
+          BUNNY_ACCESS_KEY: ${{ secrets.BUNNY_ACCESS_KEY }}
+          BUNNY_STORAGE_ZONE: ${{ secrets.BUNNY_STORAGE_ZONE }}
+
 
   publish-npm:
     needs: build
