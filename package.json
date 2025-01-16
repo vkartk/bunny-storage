@@ -1,0 +1,35 @@
+{
+  "name": "bunny-storage",
+  "version": "1.0.0",
+  "description": "Simple Bunny Storage API client",
+  "main": "dist/index.ts",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsx test.ts",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vkartk/bunny-storage.git"
+  },
+  "keywords": [
+    "bunny",
+    "storage",
+    "cdn"
+  ],
+  "author": "Karthik V",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vkartk/bunny-storage/issues"
+  },
+  "homepage": "https://github.com/vkartk/bunny-storage#readme",
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "tsx": "^4.19.2"
+  }
+}
