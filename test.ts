@@ -65,8 +65,7 @@ async function testBufferUpload(storage: BunnyStorage) {
 
   // Upload buffer
   console.log('\n⬆️  Uploading buffer...');
-  const remotePath = join(REMOTE_PATH, TEST_BUFFER_NAME);
-  await storage.uploadFile(buffer, remotePath, TEST_BUFFER_NAME);  // Added fileName parameter
+  await storage.uploadFile(buffer, REMOTE_PATH, TEST_BUFFER_NAME);  // Added fileName parameter
   console.log('✅ Buffer uploaded successfully');
 
   // Small delay to ensure file is available
