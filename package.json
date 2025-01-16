@@ -1,6 +1,6 @@
 {
   "name": "bunny-storage",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Simple Bunny Storage API client",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
