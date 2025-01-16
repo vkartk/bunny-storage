@@ -32,11 +32,29 @@ export class BunnyStorage {
         return response.json();
     }
 
-    async uploadFile(filePath: string, remotePath: string = ''): Promise<void> {
-        const fileName = basename(filePath);
-        const fullPath = remotePath ? `${remotePath}/${fileName}` : fileName;
+    async uploadFile(
+        input: string | ArrayBuffer,
+        remotePath: string = '',
+        fileName?: string
+    ): Promise<void> {
+        let fileData: ArrayBuffer;
+        let finalFileName: string;
 
-        const fileData = await readFile(filePath);
+        if (typeof input === 'string') {
+            // If input is a file path
+            fileData = await readFile(input);
+            finalFileName = basename(input);
+        } else {
+            // If input is an ArrayBuffer
+            fileData = input;
+            if (!fileName) {
+                throw new Error('fileName is required when uploading an ArrayBuffer');
+            }
+            finalFileName = fileName;
+        }
+
+        const fullPath = remotePath ? `${remotePath}/${finalFileName}` : finalFileName;
+
         const response = await fetch(`${this.baseUrl}/${fullPath}`, {
             method: 'PUT',
             headers: this.headers,

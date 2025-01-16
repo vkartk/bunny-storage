@@ -33,6 +33,8 @@ const files = await storage.listFiles('path/to/dir');
 
 // Upload a file
 await storage.uploadFile('local/path/file.txt', 'remote/path');
+// Upload from buffer
+await storage.uploadFile(buffer, 'remote/path', 'file.txt');
 
 // Download a file
 const data = await storage.downloadFile('path/to/file.txt');
