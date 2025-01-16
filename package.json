@@ -19,6 +19,16 @@
     "storage",
     "cdn"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "author": "Karthik V",
   "license": "MIT",
   "bugs": {
