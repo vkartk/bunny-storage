@@ -2,7 +2,7 @@ import { BunnyStorage } from './src/index.js';
 import { writeFileSync, unlinkSync } from 'node:fs';
 import { join } from 'node:path';
 
-const TEST_FILE_NAME = 'test-file.txt';
+const TEST_FILE_NAME = process.env.TEST_FILE_NAME || 'test-file.txt';
 const TEST_CONTENT = 'Hello, Bunny Storage!';
 const REMOTE_PATH = 'test-folder'; // Folder will be created automatically on upload
 
@@ -22,6 +22,8 @@ async function runTests() {
   }
 
   console.log('🧪 Starting Bunny Storage tests...');
+  console.log(`Using test file: ${TEST_FILE_NAME}`);
+  console.log(`Using remote path: ${REMOTE_PATH}`);
 
   try {
     // Create a local test file
